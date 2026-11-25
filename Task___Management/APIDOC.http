@@ -1,0 +1,77 @@
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username": "Ardra",
+    "email": "ardra@gmail.com",
+    "password": "ardra@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+    "username": "Anas",
+    "email": "anas@gmail.com",
+    "password": "anas@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "username": "Ardra",
+    "password": "ardra@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+    "username": "Anas",
+    "password": "anas@123"
+}
+
+###
+POST http://127.0.0.1:8000/api/tasks/
+Content-Type: application/json
+Authorization: Token 931dcbb0f0378139d308515972ff92c92f7e3e8c
+
+{
+    "title": "factorial",
+    "description": "find factorial",
+    "due_date": "2026-11-11",
+    "status": "pending"
+}
+
+###
+GET http://127.0.0.1:8000/api/tasks/
+Authorization: Token 931dcbb0f0378139d308515972ff92c92f7e3e8c
+
+###
+GET http://127.0.0.1:8000/api/tasks/1/
+Authorization: Token ARDRA_TOKEN
+
+###
+PUT http://127.0.0.1:8000/api/tasks/1/
+Content-Type: application/json
+Authorization: Token ARDRA_TOKEN
+
+{
+    "title": "factorial updated",
+    "description": "find factorial in python",
+    "due_date": "2026-11-15",
+    "status": "completed"
+}
+
+###
+GET http://127.0.0.1:8000/api/tasks/1/
+Authorization: Token ANAS_TOKEN
+
+###
+DELETE http://127.0.0.1:8000/api/tasks/1/
+Authorization: Token ARDRA_TOKEN
